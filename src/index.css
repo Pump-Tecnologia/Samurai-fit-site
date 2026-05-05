@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Montserrat', sans-serif;
+  --font-display: 'Kanit', sans-serif;
+  --font-oriental: 'Zhi Mang Xing', cursive;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-zinc-950 text-zinc-100;
+  }
+}
+
+@layer utilities {
+  .font-oriental {
+    font-family: var(--font-oriental);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #7f1d1d;
+  border-radius: 2px;
+}
