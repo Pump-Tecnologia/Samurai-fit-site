@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, AlertTriangle, Mail, Smartphone } from 'lucide-react';
+import logoSamurai from '../assets/logo-samurai.peg.jpeg';
 
 const DeleteAccount: React.FC = () => {
   return (
@@ -9,11 +10,15 @@ const DeleteAccount: React.FC = () => {
       <div className="absolute top-[-20%] right-[-10%] w-[40rem] h-[40rem] bg-red-900/10 blur-[150px] rounded-full pointer-events-none"></div>
       
       {/* Header */}
-      <header className="container mx-auto px-6 py-8 relative z-10 border-b border-zinc-900/50">
+      <header className="container mx-auto px-6 py-8 relative z-10 border-b border-zinc-900/50 flex items-center justify-between">
         <Link to="/" className="inline-flex items-center gap-2 text-zinc-400 hover:text-red-500 transition-colors font-bold uppercase tracking-wider text-xs">
           <ArrowLeft size={16} />
           Voltar para o Dojo
         </Link>
+        <div className="flex items-center gap-3">
+          <img src={logoSamurai} alt="Samurai Fit" className="w-9 h-9 rounded-lg object-cover shadow-[0_0_15px_rgba(185,28,28,0.3)]" />
+          <span className="font-oriental text-red-700 text-xl hidden sm:block">Samurai Fit</span>
+        </div>
       </header>
 
       <main className="container mx-auto px-6 py-16 relative z-10 max-w-4xl">
