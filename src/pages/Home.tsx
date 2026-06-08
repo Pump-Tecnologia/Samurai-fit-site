@@ -111,7 +111,7 @@ const Home: React.FC = () => {
                 <p className="text-[11px] text-zinc-500 leading-none font-semibold">Baixar na</p>
                 <img src="/Apple_Store.png" alt="App Store" className="h-6 w-auto" />
               </a>
-              <a href="#" className="flex flex-col items-start justify-center gap-0.5 bg-white hover:bg-zinc-100 active:scale-95 transition-all px-6 py-2.5 rounded-2xl shadow-lg">
+              <a href="https://play.google.com/store/apps/details?id=com.samuraipersonal.app" target="_blank" rel="noopener noreferrer" className="flex flex-col items-start justify-center gap-0.5 bg-white hover:bg-zinc-100 active:scale-95 transition-all px-6 py-2.5 rounded-2xl shadow-lg">
                 <p className="text-[11px] text-zinc-500 leading-none font-semibold">Baixar no</p>
                 <img src="/Google_Play_2022_logo.svg.png" alt="Google Play" className="h-6 w-auto" />
               </a>
