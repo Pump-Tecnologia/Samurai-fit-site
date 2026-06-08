@@ -1,31 +1,83 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Montserrat', sans-serif;
-  --font-display: 'Kanit', sans-serif;
+  /* Espelha o app: Exo 2 no corpo, Audiowide nos títulos/logo */
+  --font-sans: 'Exo 2', sans-serif;
+  --font-display: 'Audiowide', cursive;
   --font-oriental: 'Zhi Mang Xing', cursive;
 }
 
 @layer base {
-  body {
-    @apply font-sans bg-zinc-950 text-zinc-100;
+  html {
+    scroll-behavior: smooth;
   }
+
+  body {
+    @apply font-sans bg-zinc-950 text-zinc-100 antialiased;
+  }
+
+  /* Todos os títulos em Audiowide (sem itálico — a fonte não tem). */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight font-normal not-italic;
+  }
+
+  /* Escala reduzida: calma os títulos largos do Audiowide, preserva hierarquia.
+     Escopada a headings para não afetar o corpo. */
+  :is(h1, h2, h3, h4, h5, h6).text-2xl { font-size: 1.25rem; }
+  :is(h1, h2, h3, h4, h5, h6).text-3xl { font-size: 1.5rem; }
+  :is(h1, h2, h3, h4, h5, h6).text-4xl { font-size: 1.875rem; }
+  :is(h1, h2, h3, h4, h5, h6).text-5xl { font-size: 2.25rem; }
+  :is(h1, h2, h3, h4, h5, h6).text-6xl { font-size: 2.75rem; }
+  :is(h1, h2, h3, h4, h5, h6).text-7xl { font-size: 3.25rem; }
 }
 
 @layer utilities {
   .font-oriental {
     font-family: var(--font-oriental);
   }
+
+  /* Wordmark da marca — Audiowide, caixa de título (como no app: "Samurai Fit"). */
+  .wordmark {
+    font-family: var(--font-display);
+    @apply not-italic font-normal tracking-tight leading-none;
+  }
+
+  /* Label pequena recorrente do app — Exo 2 black itálico uppercase. */
+  .eyebrow {
+    @apply text-[10px] font-black italic uppercase tracking-[0.25em] text-zinc-500;
+  }
+
+  .grain {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 4px 4px;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 5px;
 }
 ::-webkit-scrollbar-track {
   background: #09090b;
 }
 ::-webkit-scrollbar-thumb {
   background: #7f1d1d;
-  border-radius: 2px;
+  border-radius: 3px;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
 }
