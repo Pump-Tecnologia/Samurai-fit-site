@@ -48,8 +48,11 @@ const WorkoutCard: React.FC<{ workout: SharedWorkout; index: number }> = ({ work
         {workout.exercises.map((exercise, i) => (
           <li key={`${exercise.name}-${i}`} className="flex items-baseline gap-4 px-6 py-3">
             <span className="w-5 shrink-0 text-right font-mono text-xs text-zinc-600">{i + 1}</span>
-            <span className="flex-1 font-semibold text-zinc-200">{exercise.name}</span>
-            <span className="shrink-0 text-right text-sm tabular-nums text-zinc-400">{prescription(exercise)}</span>
+            {/* No celular, a prescrição desce para baixo do nome: lado a lado, espremia os dois. */}
+            <span className="flex-1 min-w-0 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 sm:gap-4">
+              <span className="font-semibold text-zinc-200 break-words">{exercise.name}</span>
+              <span className="shrink-0 text-sm tabular-nums text-zinc-400">{prescription(exercise)}</span>
+            </span>
           </li>
         ))}
       </ol>
