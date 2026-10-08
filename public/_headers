@@ -1,0 +1,12 @@
+# Cabeçalhos do Cloudflare Pages.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Página de protocolo compartilhado pelo app (#107): o código do link está no
+# endereço, então nada de Referer, nada de buscador, e só as origens que ela usa.
+/p/*
+  Referrer-Policy: no-referrer
+  X-Robots-Tag: noindex, nofollow
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://knoxblscbwqkpiwdniys.supabase.co; frame-ancestors 'none'; base-uri 'self'; form-action 'none'
